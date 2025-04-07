@@ -4,7 +4,7 @@ import { db } from "~/server/db"
 export async function POST(req: Request){
     const body = await req.json()
     console.log('clerk webhook received',body)
-    const emailAddress = body.emailAddress 
+    const emailAddress = body.email_addresses?.[0]?.email_address;
     const firstName = body.firstName
     const lastName = body.lastName
     const imageUrl = body.imageUrl
