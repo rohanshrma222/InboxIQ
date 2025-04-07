@@ -1,3 +1,4 @@
+import { SignIn, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 import { LatestPost } from "~/app/_components/post";
@@ -9,6 +10,7 @@ export default async function Home() {
       <div>
           
           <Button>hello world</Button>
+          <SignInButton></SignInButton>
       </div>
       
 )}
