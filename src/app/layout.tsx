@@ -6,6 +6,8 @@ import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import {
   ClerkProvider,
+  SignedOut,
+  SignIn,
 } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
@@ -27,6 +29,8 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
+        <SignIn />
+        <SignedOut />
       </body>
     </html>
     </ClerkProvider>
