@@ -2,14 +2,14 @@ import { NextResponse } from "next/server"
 import { db } from "~/server/db"
 
 export async function POST(req: Request){
-    const body = await req.json()
-    console.log('clerk webhook received', JSON.stringify(body, null, 2))
+    const data = await req.json()
+    console.log('clerk webhook received', JSON.stringify(data, null, 2))
 
-    const emailAddress = body.email_addresses?.[0]?.email_address;
-    const firstName = body.first_name
-    const lastName = body.last_name
-    const imageUrl = body.image_url
-    const id = body.id
+    const emailAddress = data.email_addresses?.[0]?.email_address;
+    const firstName = data.first_name
+    const lastName = data.last_name
+    const imageUrl = data.image_url
+    const id = data.id
 
     if (!id || !emailAddress || !firstName || !lastName) {
         console.error("Missing required user fields")
