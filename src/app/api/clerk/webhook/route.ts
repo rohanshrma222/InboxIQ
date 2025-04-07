@@ -6,9 +6,9 @@ export async function POST(req: Request){
     console.log('clerk webhook received', JSON.stringify(body, null, 2))
 
     const emailAddress = body.email_addresses?.[0]?.email_address;
-    const firstName = body.firstName
-    const lastName = body.lastName
-    const imageUrl = body.imageUrl
+    const firstName = body.first_name
+    const lastName = body.last_name
+    const imageUrl = body.image_url
     const id = body.id
 
     if (!id || !emailAddress || !firstName || !lastName) {
