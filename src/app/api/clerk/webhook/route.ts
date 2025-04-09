@@ -11,11 +11,6 @@ export async function POST(req: Request){
     const imageUrl = data.image_url
     const id = data.id
 
-    if (!id || !emailAddress || !firstName || !lastName) {
-        console.error("Missing required user fields")
-        return NextResponse.json({ message: "Missing required user fields" }, { status: 400 })
-    }
-
     await db.user.create({
         data:{
             id,
